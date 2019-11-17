@@ -1,20 +1,11 @@
 import org.json.JSONObject;
-package com.company;
-
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
 
-public class POSTExample {
-
-    public static void main(String[] args) {
-        // TODO: set correct host (domain or IP address) and TCP port
-        POSTExample postExample = new POSTExample("datakomm.work", 80);
-        postExample.post3RandomNumbers();
-    }
-
+public class POST {
     private String BASE_URL; // Base URL (address) of the server
 
     /**
@@ -23,7 +14,7 @@ public class POSTExample {
      * @param host Will send request to this host: IP address or domain
      * @param port Will use this port
      */
-    public POSTExample(String host, int port) {
+    public POST(String host, int port) {
         BASE_URL = "http://" + host + ":" + port + "/";
     }
 
@@ -44,6 +35,22 @@ public class POSTExample {
         // TODO: change path to something correct
         sendPost("dkrest/auth", json);
     }
+
+    /**
+     * Posts authorization to web server
+     * @param email the email adress of the user
+     * @param phoneNr the phone number of the user
+     */
+    public void postAuthorisation(String email, int phoneNr) {
+        JSONObject json = new JSONObject();
+        json.put("email", email);
+        json.put("phone", phoneNr);
+        System.out.println("Posting authorisation data to server");
+        System.out.println(json.toString());
+        sendPost("dkrest/auth", json);
+    }
+
+
 
     /**
      * Send HTTP POST
@@ -108,3 +115,4 @@ public class POSTExample {
         return response.toString();
     }
 }
+

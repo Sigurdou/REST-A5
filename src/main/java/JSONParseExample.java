@@ -1,4 +1,3 @@
-package com.company;
 
 import org.json.JSONArray;
 import org.json.JSONException;
