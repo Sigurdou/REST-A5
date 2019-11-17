@@ -24,7 +24,7 @@ public class POST
         return response;
     }
 
-    public void sendMessage(int sessionId, String msg)
+    public void sendMsg(int sessionId, String msg)
     {
         JSONObject jsonObject = new JSONObject();
         jsonObject.put("sessionId", sessionId);

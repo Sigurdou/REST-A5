@@ -10,8 +10,16 @@ public class RESTApp {
     private static String phone = "47224458";
 
     public static void main(String[] args) {
-        //Authorize
         POST post = new POST(host, port);
+        GET get = new GET(host, port);
+        JSONParse jsonParse = new JSONParse(host, port);
+
+        //Authorize
         post.postAuthorisation(email,phone);
+
+        //Task 1
+        int sessionId = jsonParse.getSessionId(email, phone);
+        get.getTask(1, sessionId);
+        post.sendMsg(sessionId,"Hello");
     }
 }
