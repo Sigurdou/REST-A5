@@ -1,21 +1,16 @@
-public class RESTApp {
+public class RestApp {
+    public RestApp(){
 
-    /**
-     * HTTP POST /auth
-     */
+        /**AUTHORISATION*/
+        POST post = new POST("datakomm.work", 80);
+        post.postAuthorisation("samuelh@stud.ntnu.no", 47224458);
 
-    /**
-     * HTTP GET /task/<taskNr>
-     */
+        /**GET TASK*/
+        GET get = new GET("datakomm.work", 80);
+        get.getTask();
 
-    /**
-     * HTTP POST /solve
-     */
+        /**SEND ANSWER*/
 
-    /**
-     * HTTP GET /results/<sessionId>
-     */
-
-
+    }
 
 }
