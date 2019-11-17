@@ -1,5 +1,5 @@
 public class main {
     public static void main(String[] args) {
-        RestApp restApp = new RestApp();
+        RESTApp restApp = new RESTApp("datakomm.work", 80);
     }
 }
