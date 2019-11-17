@@ -33,6 +33,16 @@ public class GET
     }
 
     /**
+     *
+     * @param sessionId
+     */
+    public void recieveFeedback(int sessionId)
+    {
+        String request = "dkrest/results/" + sessionId;
+        sendGet(request);
+    }
+
+    /**
      * Send HTTP GET
      *
      * @param path Relative path in the API.

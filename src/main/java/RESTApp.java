@@ -32,5 +32,11 @@ public class RESTApp {
         int arraySum = jsonParse.getArraySum(3, sessionId);
         post.sendResult(sessionId, arraySum);
 
+        //Task 4
+        //TODO
+
+        //Receive feedback
+        get.recieveFeedback(sessionId);
+
     }
 }
