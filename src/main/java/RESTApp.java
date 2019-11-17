@@ -21,5 +21,9 @@ public class RESTApp {
         int sessionId = jsonParse.getSessionId(email, phone);
         get.getTask(1, sessionId);
         post.sendMsg(sessionId,"Hello");
+
+        //Task 2
+        String argument = jsonParse.getArgument(2, sessionId);
+        post.sendMsg(sessionId, argument);
     }
 }

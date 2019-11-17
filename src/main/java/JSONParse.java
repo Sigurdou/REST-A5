@@ -1,3 +1,4 @@
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 public class JSONParse {
@@ -13,5 +14,14 @@ public class JSONParse {
         String response = post.postAuthorisation(email, phone);
         JSONObject jsonObject = new JSONObject(response);
         return jsonObject.getInt("sessionId");
+    }
+
+    public String getArgument(int task, int sessionId)
+    {
+        String response = get.getTask(task, sessionId);
+        JSONObject jsonObject = new JSONObject(response);
+        JSONArray jsonArray = jsonObject.getJSONArray("arguments");
+        String argument = jsonArray.getString(0);
+        return argument;
     }
 }
