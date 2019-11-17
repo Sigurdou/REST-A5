@@ -1,4 +1,6 @@
-
+/**
+ *
+ */
 public class RESTApp {
 
     //Host and port
@@ -23,7 +25,12 @@ public class RESTApp {
         post.sendMsg(sessionId,"Hello");
 
         //Task 2
-        String argument = jsonParse.getArgument(2, sessionId);
+        String argument = jsonParse.getArg(2, sessionId);
         post.sendMsg(sessionId, argument);
+
+        //Task 3
+        int arraySum = jsonParse.getArraySum(3, sessionId);
+        post.sendResult(sessionId, arraySum);
+
     }
 }

@@ -4,26 +4,34 @@ import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
 
+/**
+ *
+ */
 public class GET
 {
     private String BASE_URL;
 
+    /**
+     *
+     * @param host
+     * @param port
+     */
     public GET(String host, int port)
     {
         BASE_URL = "http://" + host + ":" + port + "/";
     }
 
-    public String getTask(int task, int sessionId)
-    {
+    /**
+     *
+     * @param task
+     * @param sessionId
+     * @return
+     */
+    public String getTask(int task, int sessionId) {
         String request = "dkrest/gettask/" + task + "?sessionId=" + sessionId;
         return sendGet(request);
     }
 
-    public void sendRequestReceieve(int sessionId)
-    {
-        String request = "dkrest/results/" + sessionId;
-        sendGet(request);
-    }
     /**
      * Send HTTP GET
      *
