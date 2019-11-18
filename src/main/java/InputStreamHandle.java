@@ -3,16 +3,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-/**
- *
- */
 public class InputStreamHandle
 {
     /**
-     * Read the whole content from an InputStream, return it as a string
+     * Read inputStream and return it as string
      *
-     * @param is Inputstream to read the body from
-     * @return The whole body as a string
+     * @param is the input stream
+     * @return a string
      */
     public String convertStreamToString(InputStream is)
     {

@@ -47,6 +47,18 @@ public class POST
     /**
      *
      * @param sessionId
+     * @param pin
+     */
+    public void sendPinMsg(int sessionId, int pin)
+    {
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("sessionId", sessionId);
+        jsonObject.put("pin", pin);
+        sendPost("dkrest/solve", jsonObject);
+    }
+    /**
+     *
+     * @param sessionId
      * @param result
      */
     public void sendResult(int sessionId, int result) {
@@ -57,10 +69,10 @@ public class POST
     }
 
     /**
-     * Send HTTP POST
+     * Sends a http POST.
      *
-     * @param path     Relative path in the API.
-     * @param jsonData The data in JSON format that will be posted to the server
+     * @param path
+     * @param jsonData
      */
     public String sendPost(String path, JSONObject jsonData) {
         String responseBody = "";
@@ -99,7 +111,7 @@ public class POST
             }
         }
         catch (ProtocolException e) {
-            System.out.println("Protocol nto supported by the server");
+            System.out.println("Protocol is not supported by the server");
         }
         catch (IOException e) {
             System.out.println("Something went wrong: " + e.getMessage());

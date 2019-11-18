@@ -33,7 +33,9 @@ public class RESTApp {
         post.sendResult(sessionId, arraySum);
 
         //Task 4
-        //TODO
+        String md5 = jsonParse.getArg(4, sessionId);
+        int md5Text = jsonParse.getTextFromMd5(md5);
+        post.sendPinMsg(sessionId, md5Text);
 
         //Receive feedback
         get.recieveFeedback(sessionId);

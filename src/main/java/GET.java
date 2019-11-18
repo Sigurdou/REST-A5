@@ -43,9 +43,9 @@ public class GET
     }
 
     /**
-     * Send HTTP GET
+     * Sends a http GET.
      *
-     * @param path Relative path in the API.
+     * @param path
      */
     private String sendGet(String path)
     {
@@ -79,7 +79,7 @@ public class GET
         }
         catch (ProtocolException e)
         {
-            System.out.println("Protocol not supported by the server");
+            System.out.println("Protocol is not supported by the server");
         }
         catch (IOException e)
         {
