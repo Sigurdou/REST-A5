@@ -16,9 +16,6 @@ public class RESTApp {
         GET get = new GET(host, port);
         JSONParse jsonParse = new JSONParse(host, port);
 
-        //Authorize
-        post.postAuthorisation(email,phone);
-
         //Task 1
         int sessionId = jsonParse.getSessionId(email, phone);
         get.getTask(1, sessionId);
